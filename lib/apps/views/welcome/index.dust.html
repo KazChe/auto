@@ -1,0 +1,55 @@
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <ul class="nav nav-pills">
+                {?menuitems}
+                <li id="home" role="presentation"><a href="#">Home</a></li>
+                {/menuitems}
+                {#menuitems}
+                {?.roleName}<li role="presentation"><a href="#">{roleName}</a></li>{/.roleName}
+                {/menuitems}
+            </ul>
+        </div>
+        <!--{?menuitems}-->
+        <a href="/ap/logout" class="btn navbar-right" id="logout">Logout</a>
+        <button type="button" class="btn navbar-right">
+            <i class="glyphicon glyphicon-user"></i><span></span>
+        </button>
+      <span class="navbar-right uname-display">{username.name}</span>
+        {/menuitems}
+    </div>
+<!-- welcome main-->
+<div class="row" id="ap-main-content">
+    <div class="col-md-4 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h4>Search</h4></div>
+            <div class="panel-body">
+                <div class="list-group">
+                    {#search}
+                    <li role="presentation"><a id={#.}{id}{/.} href="/ap/support/search/ah">{#.}{.displayText}{/.}</a></li>
+                    {/search}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h4>Work Queue</h4></div>
+            <div class="panel-body">
+                <div class="list-group">
+                    No Content
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h4>Announcements</h4></div>
+            <div class="panel-body">
+                <div class="list-group">
+                    No Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/welcome body -->

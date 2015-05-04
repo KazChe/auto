@@ -1,0 +1,24 @@
+{
+  "framework": "mocha",
+  "src_files": [
+    "node_modules/chai/chai.js",
+    "node_modules/sinon/pkg/sinon.js",
+    "vendor/*",
+    "tests/setup.js",
+      "tests/ui-tests/*.test.js",
+      "tests/server-tests/*.test.js"
+  ],
+  "launchers": {
+    "node": {
+      "command": "mocha -r tests/setup.js -R tap tests/server-tests/*.test.js",
+      "protocol": "tap"
+    },
+      "mocha": {
+          "command": "mocha -r tests/setup.js -R tap tests/uiah--tests/*.test.js",
+          "protocol": "tap"
+      }
+  },
+  "launch_in_dev": [
+    "node"
+  ]
+}

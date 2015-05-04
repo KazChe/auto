@@ -1,0 +1,91 @@
+{nodata.nodata}
+<h3></h3>
+<table id="search-result" class="display table table-striped table-bordered responsive" cellspacing="0" width="100%">
+    <thead>
+    <tr class="dt-col-header-cursor">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Account Id</th>
+        <th>Email Address</th>
+        <th>Status</th>
+        <th>Mobile Number</th>
+        <th>FI</th>
+        <th>FI Network</th>
+    </tr>
+    </thead>
+    <tbody>
+    {#search_results}
+    <tr>
+    	<input type="hidden" value={fiId}></input>
+        <td>{firstName}</td>
+        <td>{lastName}</td>
+        <td>{accountId}</td>
+        <td>{email}</td>
+        <td><span id="{accountId}">{status}</span></td>
+        <td><a href="#tallModal">{phone|h}</a></td>
+        <td>{fiName}</td>
+        {?fiNetworkName}
+        <td>{fiNetworkName}</td>
+        {/fiNetworkName}
+    </tr>
+    {/search_results}
+    </tbody>
+</table>
+
+<div id="tallModal" class="modal modal-wide fade" style="font-size:13px">
+    <div class="modal-dialog">
+        <div class="modal-content summary">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" data-target="#myModal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Loading...&hellip;</p>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal" id="resetmodal">
+    <div class="modal-dialog confirmation">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Confirm Action</h4>
+            </div><div class="container secondary-dialog-padding">You are about to reset the customer PIN. Are you sure?</div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary" id="reset-pin-yes">Yes</a>
+                <a href="#" data-dismiss="modal" data-target="#resetmodal" class="btn btn-default">No</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="unlockmodal">
+    <div class="modal-dialog confirmation">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Confirm Action</h4>
+            </div><div class="container secondary-dialog-padding">You are about to unlock the customer. Are you sure?</div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary" id="unlock-yes">Yes</a>
+                <a href="#" data-dismiss="modal" data-target="#unlockmodal" class="btn btn-default">No</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="terminatemodal">
+    <div class="modal-dialog confirmation">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Confirm Action</h4>
+            </div><div class="container secondary-dialog-padding">You are about to close the customer account. Are you sure?</div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary" id="terminate-yes">Yes</a>
+                <a href="#" data-dismiss="modal" data-target="#terminatemodal" class="btn btn-default">No</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+      <script src="server1.js"></script>
+      <!--<script src="server2.js"></script>-->
+  </head>
+  <body>
+    <h4>WebSocket Test</h4>
+    <h5><font color="blue">"Report Server" Connection Status:</font>  <span id="status">Waiting on report server to initiate 'connect'</span></h5>
+    <hr />
+    <h5>Custom Message From Server:  <pre id="customEvent"></pre></h5>
+       <script>
+      $(document).ready(function(){
+          socket.emit('messagex', {jwt:'eyJhbGciOiJIUzI1NiJ9.Sk9EdW5kZWZpbmVkV2VkIEphbiAwNyAyMDE1IDE0OjI0OjM1IEdNVC0wODAwIChQYWNpZmljIFN0YW5kYXJkIFRpbWUp.PzhW3VeZCzATXoRjweUmTYZUnF7YfWi38BVa0y0_pKg', somekey:'with this value'});
+//          socket.emit('messagex', {jwt:'0_pKg'});
+      });
+  </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+{>"dusts/main.dust.html"/}
+{<content}
+<!-- welcome main-->
+<div class="row">
+    <div class="col-md-4 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h4>Search</h4></div>
+            <div class="panel-body">
+                <div class="list-group">
+                    {#search}
+                    <li role="presentation" id="ahsearch"><a href={#.}{.href}?token={#token}{token}{/token} {/.}>{#.}{.displayText}{/.}</a></li>
+                    <!--<li role="presentation" id="ahsearch"><a href={#.}{.href}{/.}>{#.}{.displayText}{/.}</a></li>-->
+                    <!--<li role="presentation" id="ahsearch"><a href="#">{#.}{.displayText}{/.}</a></li>-->
+                    {/search}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h4>Work Queue</h4></div>
+            <div class="panel-body">
+                <div class="list-group">
+                    No Content
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h4>Announcements</h4></div>
+            <div class="panel-body">
+                <div class="list-group">
+                    No Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!--<input type="hidden" name="token" value={token}>-->
+<!--/welcome body -->
+{/content}
+{<scripts}
+<!--<script src="/resources/js/xhr/welcome/cards/search.js"></script>-->
+{/scripts}

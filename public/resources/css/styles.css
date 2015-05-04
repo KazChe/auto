@@ -1,0 +1,239 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400);
+body {
+  background-color:#e0e0e0;
+  -webkit-font-smoothing: antialiased;
+  font: normal 14px Roboto,arial,sans-serif;
+}
+.navbar-default {background-color:#f4f4f4;margin-top:0px;border-width:0;z-index:5;}
+.navbar-default .navbar-nav > .active > a,.navbar-default .navbar-nav > li:hover > a {border:0 solid #4285f4;border-bottom-width:2px;font-weight:800;background-color:transparent;}
+.navbar-default .dropdown-menu {background-color:#ffffff;}
+.navbar-default .dropdown-menu li > a {padding-left:30px;}
+
+.header {background-color:#ffffff;border-width:0;}
+.header .navbar-collapse {background-color:#ffffff;}
+.btn,.form-control,.panel,.list-group,.well {border-radius:1px;box-shadow:0 0 0;}
+.form-control {border-color:#d7d7d7;}
+.btn-primary {border-color:transparent;}
+.btn-primary,.label-primary,.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {background-color:#4285f4;}
+.btn-plus {background-color:#ffffff;border-width:1px;border-color:#dddddd;box-shadow:1px 1px 0 #999999;border-radius:3px;color:#666666;text-shadow:0 0 1px #bbbbbb;}
+/*.well,.panel {border-color:#d2d2d2;box-shadow:0 1px 0 #cfcfcf;border-radius:3px;}*/
+.well,.panel {border-color:#d2d2d2;border-radius:3px;}
+.panel.quisk{border:none}
+.btn-success,.label-success,.progress-bar-success{background-color:#65b045;}
+.btn-info,.label-info,.progress-bar-info{background-color:#a0c3ff;border-color:#a0c3ff;}
+.btn-danger,.label-danger,.progress-bar-danger{background-color:#dd4b39;}
+.btn-warning,.label-warning,.progress-bar-warning{background-color:#f4b400;color:#444444;}
+hr {border-color:#ececec;}
+button {
+outline: 0;
+}
+textarea {
+resize: none;
+outline: 0;
+}
+.panel .btn i,.btn span{
+color:#666666;
+}
+.nav {
+padding-left: 0 !important;
+margin-bottom: 10px !important;
+list-style: none !important;
+}
+.navbar-right {
+float: right!important;
+margin-right: 1%!important;
+margin-top: 1%!important;;
+}
+ul {
+margin-top: 10px !important;
+}
+.panel-body {
+height: 50% !important;
+}
+.panel-heading {
+padding: 2px 15px !important;
+border-top-left-radius: 0px !important;
+border-top-right-radius: 0px !important;
+}
+.panel .panel-heading {
+ background-color:#000000;
+ font-weight:700;
+ font-size:16px;
+ color:#ffffff;
+ border-color:#ffffff;
+}
+.panel .panel-heading a {
+ font-weight:400;
+ font-size:17px !important;
+ color: #ffffff;
+}
+.panel .panel-default {
+ border-color:#cccccc;
+}
+.panel .panel-thumbnail {
+ padding:0;
+}
+.panel .img-circle {
+ width:50px;
+ height:50px;
+}
+.list-group-item:first-child,.list-group-item:last-child {
+ border-radius:0;
+}
+h3,h4,h5 {
+ /*border:0 solid #000000;*/
+ border-bottom-width:1px;
+ padding-bottom:0px;
+}
+.modal-dialog {
+ width: 450px;
+ margin: 5% auto !important;;
+}
+.modal-header {
+    border-bottom: 0px !important;
+}
+.modal-content{
+    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    -moz-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    -0-box-shadow: 0 5px 15px rgba(0,0,0,0);
+    box-shadow: 0 5px 15px rgba(0,0,0,0);
+    position: relative;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    outline: 0;
+    border-radius: 0px;
+}
+.modal-footer {
+ border-width:0;
+    padding: 30px !important;
+}
+.dropdown-menu {
+ background-color:#f4f4f4;
+ border-color:#f0f0f0;
+ border-radius:0;
+ margin-top:-1px;
+}
+/* end theme */
+
+/* template layout*/
+#subnav {
+ position:fixed;
+ width:100%;
+}
+
+@media (max-width: 768px) {
+ #subnav {
+  padding-top: 6px;
+ }
+}
+
+#main {
+ padding-top:120px;
+}
+
+.uname-display {
+    padding-top: 0.8%;overflow-wrap: break-word;font-size: .88em;
+}
+.dt-col-header-cursor {
+    cursor: pointer;
+}
+
+.modal.modal-wide .modal-dialog {
+    width: 1345px;
+}
+
+.modal-content.quisk-ays{  min-height: 200px; width: 25%; margin: auto;}
+#tallModal .modal-body p { margin-bottom: 700px !important; }
+#fi-ul{overflow: hidden}
+
+
+/* css style unique to Accont Holder Search top portion*/
+.panel-heading a:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e114";
+    float: right;
+    color: #ffffff;
+}
+
+.panel-heading a.collapsed:after {
+    content: "\e080";
+}
+
+#main {
+    padding-top: 50px !important;
+    width: 100% !important;
+}
+ul.dropdown-menu {
+    background-color: white;
+    width: 100%;
+    margin-top: 0px !important;
+}
+
+/*End css style unique to Accont Holder Search top portion*/
+
+.panel-body.summary-right{padding:0px; min-height:400px;overflow:overlay}
+.panel.panel-default.summary{margin-bottom: 5px; margin-top: 5px; border:1px solid grey;overflow-x: hidden;}
+.panel-footer{margin-top: 125px !important; padding: 10px 15px !important;
+     background-color: #ffffff;
+    border-top: 0px !important;
+    /* border-bottom-right-radius: 3px; */
+    border-bottom-left-radius: 3px !important;}
+.panel.panel-default.summary-left{height: 400px; position: fixed; width: 24%; margin-bottom: 10px; border:1px solid grey;}
+.panel-body.summary-left{padding:0px;}
+.panel.panel-default.summary-right{margin-bottom: 10px; border:1px solid grey;margin-left: .7%;}
+.panel-body.summary{padding:0px;}
+.panel-body.summary-right-accordions{padding:0px;}
+.col-md-9.col-sm-6.summary-right{padding-left: 0.8%;float: right;}
+.list-inline.summary-top{padding-left:1%; }
+.summary-row{margin-top: 8px !important;}
+.qpanel{margin-bottom: 20px;
+    background-color: #fff;
+    border: none;
+    border-radius: 0px;
+}
+/* search result modal */
+.modal-content.summary{height: 700px;}
+/*overflow-y: scroll;}*/
+
+td.details-control {
+    background: url('../img/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('../img/details_close.png') no-repeat center center;
+}
+
+.secondary-dialog-padding {font-weight: bold; padding-top: 20px;}
+.alert.summary-alert{padding:8px;}
+.alert-dismissable .close, .alert-dismissible .close{right:0px !important;}
+.summary-action.row {margin-right:0px; margin-left: 0px; padding-top: 5px}
+.summary-action.last-row {padding-bottom: 20px}
+.summary-action-header.alert.alert-info{text-align: center; border-radius: 0px;}
+.btn.btn-primary.summary-action.fixed-length-btn{width:125px;}
+
+/*.form-control.transaction-summary-month{width:50%}*/
+.form-control.adjustment-dropdown{width:10%}
+.pointer{cursor:pointer}
+.modal-dialog.confirmation{margin: 15% auto !important;}
+
+td#updatable {
+    -webkit-animation-name: actionsanimation; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
+    -webkit-animation-iteration-count: 1;
+    animation-name: actionsanimation;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes actionsanimation {
+    100% {background-color: #dff0d8;}
+}
+/* Standard syntax */
+@keyframes actionsanimation {
+    100% {background-color: #dff0d8}
+}
+.dataTables_info{margin-top: 20px;font-weight: bold;}
+.table.table-condensed.trx-detail{vertical-align: top;width:35%;margin-left:10px;margin-top:10px;white-space:nowrap}
+.table.table-condensed.trx-detail>tbody>tr>td{padding: 2px;border:none;}
+.heavy{font-weight:bold;}

@@ -1,0 +1,9 @@
+default:
+  - 'clean'
+  - 'copy:build'
+  - 'regex-replace'
+  - 'copy:replaced'
+  - 'concat'
+  - 'uglify'
+  - 'cssmin'
+  - 'clean'

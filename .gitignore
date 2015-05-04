@@ -1,0 +1,6 @@
+.idea
+.svn
+node_modules/
+test-reports.xml
+*.log
+*.out

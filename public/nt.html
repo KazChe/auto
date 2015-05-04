@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+      <!--<script src="server1.js"></script>-->
+      <!--<script src="server2.js"></script>-->
+  </head>
+  <body>
+  <ul id="menu"></ul>
+    <!--<h4>WebSocket Test</h4>-->
+    <!--<h5><font color="blue">"Report Server" Connection Status:</font>  <span id="status">Waiting on report server to initiate 'connect'</span></h5>-->
+    <!--<hr />-->
+    <!--<h5>Custom Message From Server:  <pre id="customEvent"></pre></h5>-->
+       <script>
+//      $(document).ready(function(){
+////          socket.emit('messagex', {jwt:'eyJhbGciOiJIUzI1NiJ9.Sk9EdW5kZWZpbmVkV2VkIEphbiAwNyAyMDE1IDE0OjI0OjM1IEdNVC0wODAwIChQYWNpZmljIFN0YW5kYXJkIFRpbWUp.PzhW3VeZCzATXoRjweUmTYZUnF7YfWi38BVa0y0_pKg'});
+////          socket.emit('messagex', {jwt:'0_pKg'});
+//      });
+
+$(function () {
+
+    var data = {
+        menu: [{
+            name: 'Croatia',
+            link: '0',
+            sub: null
+        }, {
+            name: 'England',
+            link: '1',
+            sub: [{
+                name: 'Arsenal',
+                link: '0-0',
+                sub: null
+            }, {
+                name: 'Liverpool',
+                link: '0-1',
+                sub: null
+            }, {
+                name: 'Manchester United',
+                link: '0-2',
+                sub: null
+            }]
+        }, {
+            name: 'Spain',
+            link: '2',
+            sub: [{
+                name: 'Barcelona',
+                link: '2-0',
+                sub: null
+            }, {
+                name: 'Real Madrid',
+                link: '2-1',
+                sub: null
+            }]
+        }, {
+            name: 'Germany',
+            link: '3',
+            sub: [{
+                name: 'Bayern Munich',
+                link: '3-1',
+                sub: null
+            }, {
+                name: 'Borrusia Dortmund',
+                link: '3-2',
+                sub: null
+            }]
+        }]
+    };
+    var getMenuItem = function (itemData) {
+        var item = $("<li>")
+            .append(
+            $("<a>", {
+                href: '#' + itemData.link,
+                html: itemData.name
+            }));
+        if (itemData.sub) {
+            var subList = $("<ul>");
+            $.each(itemData.sub, function () {
+                subList.append(getMenuItem(this));
+            });
+            item.append(subList);
+        }
+        return item;
+    };
+
+    var $menu = $("#menu");
+    $.each(data.menu, function () {
+        $menu.append(
+            getMenuItem(this)
+        );
+    });
+    $menu.menu();
+});
+  </script>
+  </body>
+</html>

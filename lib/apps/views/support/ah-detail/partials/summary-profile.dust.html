@@ -1,0 +1,101 @@
+                    <table id="summary-result" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                        <tr class="">
+                            <th>ID Type</th>
+                            <th>ID</th>
+                            <th>DOB</th>
+                            <th>Account Creation Date</th>
+                            <th>Last Activity Date</th>
+                            <th>Account Balance</th>
+                            <th>Balance Limit</th>
+                            <th>Account Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>{result.idType}</td>
+                            <td>{result.idNumber}</td>
+                            <td>{result.dob}</td>
+                            <td>{result.accountCreationDate}</td>
+                            <td><span id="last-activity-date">{result.lastActivityDate}</span></td>
+                            <td>{result.balance}</td>
+                            <td>{result.balanceLimit}</td>
+                            <td><span id="account-status">{result.status}</span></td>
+                        </tr>
+                </table>
+                {@ne key=result.status value="DELETED"}
+                <div class="panel-group" id="accordion2">
+                    <div class="qpanel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                    Account Controls
+                            </h4>
+                        </div>
+                        <div id="collapseOneOfTwo">
+                            <div class="panel-body summary-right-accordions">
+                                <table id="account-control" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                    <thead>
+                                    <tr class="">
+                                        <th>SMS Locked</th>
+                                        <th>SMS Account Freeze</th>
+                                        <th>Confirm Flag</th>
+                                        <th>CYes Flag</th>
+                                        <th>PIN Locked</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><span id="sms-account-locked">{result.smsAccountLocked}</span></td>
+                                        <td><span id="sms-account-freeze">{result.smsAccountFreeze}</span></td>
+                                        <td><span id="confirm-flag">{result.confirmFlag}</span></td>
+                                        <td><span id="cyes-flag">{result.cyesFlag}</span></td>
+                                        <td><span id="account-lock">{@eq key=result.authLock type="boolean" value="true"}Y{:else}N{/eq}</span></td>
+                                    </tr>
+                                </table>
+                                <div class="col-md-3"></div>
+                                <div class="col-md-3" style="text-align: center;height: 10px;">
+                                    <span id="terminate-message"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="qpanel panel-default" id="action-controls">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion2" href="#collapseTwoOfTwo" class="collapsed">Actions</a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwoOfTwo" class="panel-collapse collapse">
+                                <div class="panel-body summary-right-accordions">
+                                    <div class="summary-action row">
+                                        <div class="col-xs-2" id="reset-div">
+                                            <span id="reset-btn" class="btn btn-primary summary-action fixed-length-btn" data-toggle="modal" href="#resetmodal">Reset PIN</span>
+                                        </div>
+                                        <div class="col-md-3" style="text-align: center;height: 10px;margin-left: 200px">
+                                            <span id="reset-pin-message"></span>
+                                        </div>
+                                        <div class="col-md-3" style="text-align: center;height: 10px;margin-left: 200px">
+                                            <span id="action-message"></span>
+                                        </div>
+                                    </div>
+                                    {@eq key=result.authLock type="boolean" value="true"}
+                                    <div class="summary-action row">
+                                        <div class="col-xs-2" id="unlock-div">
+                                            <span id="unlock-btn" class="btn btn-primary summary-action fixed-length-btn" data-toggle="modal" href="#unlockmodal">Unlock Account</span>
+                                        </div>
+                                        <div class="col-md-3" style="text-align: center; text-align: center;height: 10px;">
+                                            <span id="unlock-message"></span>
+                                        </div>
+                                    </div>
+                                    {/eq}
+                                    <div class="summary-action row last-row">
+                                        <div class="col-xs-2" id="close-account-btn">
+                                            <span class="btn btn-primary summary-action fixed-length-btn" data-toggle="modal" href="#terminatemodal">Close Account</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+    {/ne}

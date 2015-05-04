@@ -1,0 +1,45 @@
+{>"dusts/head.dust.html"/}
+{<bodycontent}
+<div class="container" id="main">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <ul class="nav nav-pills">
+                {?menuitems}
+                <li id="home" role="presentation"><a href="#">Homell</a></li>
+                {/menuitems}
+                {#menuitems}
+                <li role="presentation"><a href="#">{roleName}</a></li>
+                {/menuitems}
+            </ul>
+        </div>
+        <!--{?menuitems}-->
+        <a href="/ap/logout" class="btn navbar-right" id="logout">Logoutoooo</a>
+        <button type="button" class="btn navbar-right">
+            <i class="glyphicon glyphicon-user"></i><span></span>
+        </button>
+        <!--{/menuitems}-->
+    </div>
+    <!-- start partials -->
+    {+content}this is base content{/content}
+    <!-- end partials -->
+</div>
+<div id="outout"></div>
+<!-- script references -->
+<script src="/components/dust/dust-core.min.js"></script>
+<script src="/components/dust/dust-full.min.js"></script>
+<script src="/components/dust/dust-helpers.min.js"></script>
+<script src="/components/jquery/dist/jquery.min.js"></script>
+<script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/resources/js/scripts.js"></script>
+<script src="/resources/js/xhr/interceptors/addtoken.js"></script>
+<script src="/resources/js/xhr/interceptors/readtoken.js"></script>
+<script src="/resources/js/xhr/welcome/cards/search.js"></script>
+<script src="/resources/js/xhr/support/account_holder/account_holder_search.js"></script>
+<script src="/resources/js/xhr/support/account_holder/ah_detail_summary.js"></script>
+<script src="/resources/js/jquery.datatables.min.js"></script>{~n}
+<script src="/resources/js/datatables.bootstrap.js"></script>
+<script src="//cdn.datatables.net/responsive/1.0.4/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" src="/resources/js/compiled-dust/fibynetwork.js"></script>
+{+scripts}
+{/scripts}
+{/bodycontent}

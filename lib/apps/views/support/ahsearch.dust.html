@@ -1,0 +1,101 @@
+<script type="text/javascript" src="/resources/js/dust-templates/fibynetwork.js"></script>
+<div class="panel-group" id="accordion">
+    <div id="output"></div>
+    <div class="panel panel-default" id="panel1">
+        <div class="panel-heading">
+            <h4><a data-toggle="collapse" data-target="#collapseOne" href="#collapseOne">Account Holder Search</a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="row" id="msg-row"></div>
+                <form class="form-horizontal ah-search">
+
+
+                    {?networkadmin}
+                    <div class="form-group"><label class="control-label col-sm-2">Network:</label>
+                        <div class="col-md-3">
+                            <div class="dropdown" id="network-dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="network-list"
+                                        data-toggle="dropdown" aria-expanded="false" style="width: 100%;">All Networks <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="network-dropdown" style="">
+                                    {#networkadmin}
+                                    <li role="presentation"><a data-role="network" role="menuitem" tabindex="-1" href="#">{.entityName}</a></li>
+                                    {/networkadmin}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {/networkadmin}
+
+                    <div class="form-group"><label class="control-label col-sm-2">Financial Instituituion:</label>
+                        <div class="col-md-3">
+                            {#fidropdown}
+                            {@idx}
+                            {@if cond="{.} == '{fidropdown}'.split(',').length -1"}
+                            {@if cond="{.} == 0"}
+                            <span id='entityName' class="control-label col-sm-2" role="menuitem" tabindex="-1">{entityName}</span>
+                            {:else}
+                            <div class="dropdown" id="fi-dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                        data-toggle="dropdown" aria-expanded="false" style="width: 100%;">All Financial Institutions <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1" style="" id="fi-ul">
+                                    {#fidropdown}
+                                    <li role="presentation"><a data-role="fidropdown" role="menuitem" tabindex="-1" href="#">{.entityName}</a></li>
+                                    {/fidropdown}
+                                </ul>
+                            </div>
+                            {/if}
+                            {/if}
+                            {/idx}
+                            {/fidropdown}
+                        </div>
+                    </div>
+
+
+
+
+                   <!-- was here -->
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Mobile Number:</label>
+
+                        <div class="col-md-3">
+                            <input id="mobile" type="text" class="form-control ah-search">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Email Address:</label>
+
+                        <div class="col-md-3">
+                            <input id="email" type="text" class="form-control ah-search">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">First Name:</label>
+
+                        <div class="col-md-3">
+                            <input id="fname" type="text" class="form-control ah-search">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Last Name:</label>
+
+                        <div class="col-md-3">
+                            <input id="lname" type="text" class="form-control ah-search">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2"></div>
+                        <div class="col-md-3">
+                            <button id="search-btn" class="btn btn-primary btn-lg btn-block">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+</div>
+

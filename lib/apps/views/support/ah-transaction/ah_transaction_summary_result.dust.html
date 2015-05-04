@@ -1,0 +1,55 @@
+<form class="form-inline">
+    <div class="form-group">
+        <select class="form-control transaction-summary-month">
+            <!--{#month.months}-->
+            <!--<option value="{$idx}">{.}</option>-->
+            <!--{/month.months}-->
+        </select>
+    </div>
+    <button id="summary-transaction-activity-btn" type="button" class="btn btn-primary">Activity</button>
+</form>
+<h3></h3>
+{?ah_transactions.transactionHistory}
+<table id="transaction-result" class="display table table-striped table-bordered" cellspacing="0" width="100%">
+    <thead>
+    <tr class="dt-col-header-cursor">
+        <th>Date</th>
+        <th>Description</th>
+        <th>Transaction Type</th>
+        <th>Transaction Id</th>
+        <th>Amount{#ah_transactions}{~s}({transactionHistory[0].transactionAmount.currency}){/ah_transactions}</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {#ah_transactions.transactionHistory}
+    <tr>
+        <!--<td>{transactionTime}</td>-->
+        <td>{formattedTransactionDate}</td>
+        <td>{transactionDescription}</td>
+        <td>{transactionType}</td>
+        <td><span id="trx-id" data-trx-ref-id="{refTransactionId}"><a class="pointer">{strTransactionId}</a></span></td>
+        <!--<td><span id="trx-id"><a class="pointer">{strTransactionId}</a></span></td>-->
+        <!--<td><a class="pointer">{strTransactionId}</a></td>-->
+        <td>{formattedTransactionAmount}</td>
+    </tr>
+    {/ah_transactions.transactionHistory}
+    {:else}
+    <h3 color="pink">No Transactions Available</h3>
+    {/ah_transactions.transactionHistory}
+
+    </tbody>
+</table>
+<!-- Re-use for stacked approach - when admin clicks a transaction -->
+<div id="tallModal" class="modal modal-wide fade">
+    <div class="modal-dialog">
+        <div class="modal-content summary">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Loading...&hellip;</p>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

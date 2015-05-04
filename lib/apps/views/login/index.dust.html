@@ -1,0 +1,35 @@
+{>"dusts/main.dust.html"/}
+{<content}
+<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="text-center"><br>Admin Portal Login</h3>
+            </div>
+            <div class="modal-body">
+                <form class="form col-md-12 center-block" action="#" method="post">
+                    <div class="form-group">
+                        <input autofocus="autofocus" class="form-control input-lg" id="email" name="email" placeholder="Email" type="text">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control input-lg" id="password" name="password" placeholder="Password" type="password">
+                    </div>
+                    <div class="form-group">
+                        <button id="login" class="btn btn-primary btn-lg btn-block">Login</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                {?msg}
+                <div id="login-msg" class="col-md-12 alert alert-danger" style="text-align: center;">
+                    {msg}
+                </div>
+                {/msg}
+            </div>
+        </div>
+    </div>
+</div>
+{/content}
+{<scripts}
+<script src="/resources/js/xhr/login/login.js"></script>
+{/scripts}
